@@ -1,0 +1,187 @@
+<div class="sidebar" [class.close]="collapsed === true">
+  <div class="logo-container">
+    <!-- <i class='logo fa fa-calendar'></i>
+    <span class="logo-text"> </span> -->
+  </div>
+  <ul class="sidebar-nav">
+    <!-- <li>
+      <div class="profile-details">
+        <div class="profile-content">
+          <i class="fa fa-user profile-icon"></i>
+        </div>
+        <div class="profile-content-name">
+          <div class="welcome-text">Bienvenido</div>
+          <div class="profile-name">Adriana Ríos</div>
+        </div>
+        <i></i>
+      </div>
+    </li> -->
+    <!-- <li>
+      <div class="profile-details">
+        <div class="flex-column"><i class="fa fa-user-circle-o fa-2x profile-icon"></i></div>
+        <div class="flex-column">
+          <span>Bienvenido</span><br>
+          <span>Adriana Ríos</span>
+        </div>
+      </div>
+    </li> -->
+    <li *ngFor="let calendarView of calendarViewList; let i = index" (click)="setCalendarView(calendarView)">
+      <div class="sidebar-nav-item" [ngClass]="{'nav-active': calendarViewSelected.view == calendarView.view}">
+        <a href="javascript:void(0)">
+          <i [class]="calendarView.icon"></i>
+          <span class="sidebar-link-text">{{calendarView.label}}</span>
+        </a>
+        <!-- <i *ngIf="item.subprivileges && item.subprivileges.length > 0" class='fa fa-caret-down arrow'
+          (click)="addExpandClass(item.label)"></i> -->
+      </div>
+      <!-- <ul class="sidebar-nav-sub-menu">
+        <li><a class="sidebar-link-text" href="#">{{item.label}}</a></li>
+        <li *ngFor="let subprivilege of item.subprivileges; let i = index" routerLinkActive="sub-menu-nav-active">
+          <div class="sidebar-nav-item">
+            <a [routerLink]="subprivilege.routeLink">
+              <i [class]="subprivilege.icon"></i>
+              <span class="">{{subprivilege.label}}</span>
+            </a>
+          </div>
+        </li>
+      </ul> -->
+    </li>
+  </ul>
+</div>
+<!-- <section class="home-section">
+  <div class="home-content">
+    <i class='fa fa-bars bx bx-menu' (click)="toggleCollapse()"></i>
+    <span class="text">Drop Down Sidebar</span>
+  </div>
+</section> -->
+
+<!-- <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">A</button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+    <button class="btn-close" @rotate *ngIf="collapsed">
+      <i class="fa fa-bars close-icon" (click)="closeSidebar()"></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let item of sidebarData; let i = index;">
+      <a href="" class="sidenav-nav-link" [routerLink]="item.routeLink" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}" (click)="addExpandClass(item.label)">
+        <span class="sidenav-link-icon"><i [class]="item.icon"></i></span>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{item.label}}</span>
+        <span class="sidenav-link-dropdown" @fadeInOut *ngIf="collapsed"><i class="fa fa-caret-down"></i></span>
+      </a>
+      <ul class="sidenav-nav-submenu" [class.expand]="showMenu === item.label">
+        <li *ngFor="let subprivilege of item.subprivileges">
+          <a [routerLink]="['../' + subprivilege.routeLink]" [routerLinkActive]="['router-link-active']"
+            href="javascript:void(0)">
+            <i class="{{subprivilege.icon}}"></i>&nbsp;
+            <span>{{ subprivilege.label }}</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidenav-nav-submenu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+
+
+
+<!-- <div class="sidebar" [class.close]="collapsed === true">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">D</button>
+    <div class="logo-text" @fadeIn>DMP</div>
+  </div>
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item" *ngFor="let item of sidebarData; let i = index">
+      <div class="icon-link">
+        <a [routerLink]="item.routeLink" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          (click)="addExpandClass(item.label)">
+          <i class="sidebar-link-icon" [class]="item.icon"></i>
+          <span class="link_name">{{item.label}}</span>
+        </a>
+        <i class='fa fa-caret-down sidebar-link-dropdown'></i>
+      </div>
+      <ul class="sidebar-nav-sub-menu" [class.expand]="showMenu == item.label">
+        <li><a class="link_name" href="#">{{item.label}}</a></li>
+        <li *ngFor="let subprivilege of item.subprivileges">
+          <a href="#">{{subprivilege.label}}</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="profile-details">
+        <div class="profile-content">
+        </div>
+        <div class="name-job">
+          <div class="profile_name">Prem Shahi</div>
+          <div class="job">Web Desginer</div>
+        </div>
+        <i class="bx bx-log-out"></i>
+      </div>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+  <div class="home-content">
+    <i class="dropdown-sidebar fa fa-bars" (click)="toggleCollapse()"></i>
+    <span class="text">Drop Down Sidebar</span>
+  </div>
+</section>
+ -->
+
+
+<!-- 
+<div class="sidebar" [class.close]="collapsed === true">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">D</button>
+    <div class="logo-text" @fadeIn>DMP</div>
+    <button class="btn-close" @rotate *ngIf="!collapsed">
+      <i class="fa fa-bars close-icon" (click)="closeSidebar()"></i>
+    </button>
+  </div>
+  <ul class="sidebar-nav">
+    <li class="sidebar-nav-item" *ngFor="let item of sidebarData; let i = index"
+      [class.showMenu]="showMenu === item.label" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a href="" class="sidebar-nav-link" [routerLink]="item.routeLink"
+         (click)="addExpandClass(item.label)">
+        <span class="sidebar-link-icon"><i [class]="item.icon"></i></span>
+        <span class="sidebar-link-text" @fadeIn *ngIf="!collapsed">{{item.label}}</span>
+        <span class="sidebar-link-dropdown" @fadeIn *ngIf="item.subprivileges"><i
+            class="fa fa-caret-down"></i></span>
+      </a>
+      <ul class="sidebar-nav-sub-menu" *ngIf="item.subprivileges && item.subprivileges.length > 0">
+        <li class="sidebar-sub-menu-label"><a href="#">{{item.label}}</a></li>
+        <li class="sidebar-sub-menu-item" *ngFor="let subprivilege of item.subprivileges; let i = index">
+          <a href="" class="sidebar-sub-menu-link" [routerLink]="item.routeLink">
+            <span class="sidebar-sub-menu-link-icon"><i [class]="subprivilege.icon"></i></span>
+            <span class="sidebar-sub-link-text" @fadeIn >{{subprivilege.label}}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="profile-details">
+        <div class="profile-content">
+        </div>
+        <div class="name-job">
+          <div class="profile_name">Prem Shahi</div>
+          <div class="job">Web Desginer</div>
+        </div>
+        <i class='bx bx-log-out'></i>
+      </div>
+    </li>
+  </ul>
+</div>
+<section class="home-section">
+  <div class="home-content">
+    <i class='fa fa-bars' (click)="toggleCollapse()"></i>
+    <span class="text">Drop Down Sidebar</span>
+  </div>
+</section> -->

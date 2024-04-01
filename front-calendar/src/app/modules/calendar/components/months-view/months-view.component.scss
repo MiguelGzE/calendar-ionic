@@ -1,0 +1,678 @@
+@import "../../../../shared/styles/global-variables.scss";
+
+// // .today {
+// //     background-color: #299e4c;
+// //     color: white;
+// // }
+
+// // // .day {
+// // //     font-weight: 640;
+// // //     color: var(--text-color);
+// // // }
+
+// // .day:hover {
+// //     // background-color:#00addf;
+// //     // color: white;
+// //     cursor: pointer;
+// // }
+
+// // .today:hover {
+// //     background-color: #198138;
+// //     color: white;
+// //     cursor: pointer;
+// // }
+
+// // // .day-active {
+// // //     // background-color:#00addf;
+// // //     color: white;
+// // // }
+
+// // @media (max-width: 435px) {
+// //     .card-container {
+// //         .month-container {
+// //             padding: 0;
+// //             margin: 0;
+// //             border: 1px solid red;
+// //             // font-size: calc(0.75em + 1vmin);
+// //             // width: 100%;
+// //             // margin-left: $sidebar-collapsed-width;
+
+// //             .month-header {
+// //                 padding: 0px;
+// //                 font-weight: 600;
+// //                 // font-size: 1.5vh;
+// //             }
+
+// //             th {
+// //                 text-align: center;
+// //                 padding: 0px;
+// //                 margin: 0;
+// //                 font-size: 1.2vh;
+// //             }
+
+// //             td {
+// //                 text-align: center;
+// //                 padding: 0px;
+// //                 // padding: 3px, 0px, 3px, 0px;
+// //                 margin: 0;
+// //                 font-size: 1.2vh;
+// //             }
+// //         }
+// //     }
+// // }
+// // =======================
+
+// // .card-container {
+// // transition: 2s;
+// // .year-header {
+// //     // border: 1px solid yellow;
+// //     display: flex;
+// //     align-items: center;
+// //     min-height: 2.75rem;
+// //     margin-bottom: 0.5rem;
+// //     justify-content: center;
+// //     span {
+// //         padding: 0.7rem 1.1rem;
+// //         font-size: 1.2rem;
+// //         color: var(--month-text-color);
+// //         font-weight: 700;
+// //     }
+// //     span:hover {
+// //         border-radius: 50px;
+// //         background-color: var(--sidebar-nav-active);
+// //         // background-color: var(--overlay-background);
+// //         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+// //         padding: 0.7rem 1.1rem;
+// //         cursor: pointer;
+// //     }
+// // }
+
+// // .month-container {
+// //     text-align: center;
+// //     background-color: var(--background-main);
+// //     box-shadow: var(--shadow);
+
+// //     .month-header {
+// //         display: flex;
+// //         justify-content: center;
+// //         align-items: center;
+// //         color: var(--text-color);
+// //         border: 1px solid red;
+
+// //         .month-name {
+// //             color: var(--month-text-color);
+// //             font-weight: 700;
+// //             border-radius: 50px;
+// //             &:hover {
+// //                 background-color: var(--hover-color);
+// //                 transition: var(--transition);
+// //                 cursor: pointer;
+// //             }
+// //         }
+// //     }
+
+// //     .month-body {
+// //         // padding: 0.7rem 0;
+// //         .month-week-days {
+// //             display: grid;
+// //             grid-template-columns: repeat(7, 1fr);
+// //             font-weight: 600;
+// //             min-height: 3rem;
+// //             .week-day-name {
+// //                 display: grid;
+// //                 place-items: center;
+// //                 color: var(--background-second);
+// //             }
+// //         }
+
+// //         .month-days {
+// //             display: grid;
+// //             grid-template-columns: repeat(7, 1fr);
+// //             gap: 2px;
+// //             color: var(--text-color);
+// //             .day {
+// //                 // width: 40px;
+// //                 // height: 40px;
+// //                 display: flex;
+// //                 align-items: center;
+// //                 justify-content: center;
+// //                 padding: 5px;
+// //                 position: relative;
+// //                 cursor: pointer;
+// //                 color: var(--day-text-color);
+// //                 font-size: 1.6ch;
+// //                 &.prev-month,
+// //                 &.next-month {
+// //                     color: var(--background-second);
+// //                 }
+// //             }
+// //         }
+// //     }
+// // }
+
+// // .month-container {
+// //     text-align: center;
+// //     background-color: var(--background-main);
+// //     border-radius: 30px;
+// //     padding: 0.75rem;
+// //     box-shadow: var(--shadow);
+// //     // height: max-content;
+// //     // width: max-content;
+// //     // transition: 2s;
+
+// //     .month-header {
+// //         display: flex;
+// //         justify-content: space-between;
+// //         align-items: center;
+// //         color: var(--text-color);
+// //         // * {
+// //         //     padding: 0.7rem 1.75rem;
+// //         // }
+
+// //         .month-name {
+// //             color: var(--month-text-color);
+// //             font-weight: 700;
+// //             font-size: 1.1rem;
+// //             padding: 0.75rem 1.1rem;
+// //             border-radius: 50px;
+// //             &:hover {
+// //                 background-color: var(--hover-color);
+// //                 transition: var(--transition);
+// //                 cursor: pointer;
+// //             }
+// //         }
+// //     }
+
+// //     .month-body {
+// //         // padding: 0.7rem 0;
+// //         .month-week-days {
+// //             display: grid;
+// //             grid-template-columns: repeat(7, 1fr);
+// //             font-weight: 600;
+// //             min-height: 3rem;
+// //             .week-day-name {
+// //                 display: grid;
+// //                 place-items: center;
+// //                 color: var(--background-second);
+// //             }
+// //         }
+
+// //         .month-days {
+// //             display: grid;
+// //             grid-template-columns: repeat(7, 1fr);
+// //             gap: 2px;
+// //             color: var(--text-color);
+// //             .day {
+// //                 // width: 40px;
+// //                 // height: 40px;
+// //                 display: flex;
+// //                 align-items: center;
+// //                 justify-content: center;
+// //                 padding: 5px;
+// //                 position: relative;
+// //                 cursor: pointer;
+// //                 color: var(--day-text-color);
+// //                 font-size: 1.6ch;
+// //                 &.prev-month,
+// //                 &.next-month {
+// //                     color: var(--background-second);
+// //                 }
+// //             }
+// //         }
+
+// //         // ol {
+// //         //     list-style: none;
+// //         //     display: grid;
+// //         //     grid-template-columns: repeat(7, 1fr);
+// //         //     padding: 0;
+// //         // }
+
+// //         // .month-week-days {
+// //         //     li.week-day-name {
+// //         //         color: var(--month-text-color);
+// //         //         // opacity: 1;
+// //         //         font-weight: 400;
+// //         //     }
+// //         // }
+
+// //         // .month-days {
+// //         //     li {
+// //         //         // text-align: center;
+// //         //         // // padding: 5px 0px 5px 0px;
+// //         //         // // padding: 3px, 0px, 3px, 0px;
+// //         //         // margin: 0;
+// //         //         // font-size: 1.5ch;
+// //         //         &.day {
+// //         //             color: var(--day-text-color);
+// //         //             &:hover {
+// //         //                 cursor: pointer;
+// //         //             }
+// //         //         }
+
+// //         //         &.prev-month,
+// //         //         &.next-month {
+// //         //             color: rgb(108, 117, 125);
+// //         //         }
+// //         //     }
+// //         // }
+// //     }
+
+// //     // .month-footer {
+// //     //     padding: 10px;
+// //     //     // display: flex;
+// //     //     // justify-content: flex-end;
+// //     //     align-items: center;
+// //     // }
+// // }
+
+// // &.month .month-header {
+// //     .month-name > span:hover,
+// //     i:hover {
+// //         border-radius: 50px;
+// //         background-color: var(--sidebar-nav-active);
+// //         // background-color: var(--overlay-background);
+// //         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+// //         padding: 0.7rem 1.1rem;
+// //         cursor: pointer;
+// //     }
+// // }
+// // }
+
+.card-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0;
+    margin: auto;
+}
+
+.card-container.year {
+    border-radius: 1.5rem;
+    // border: 1px solid var(--text-color);
+    box-shadow: var(--shadow);
+    background-color: var(--background-main);
+    padding: 0 0.5rem;
+    .year-header {
+        display: flex;
+        align-items: center;
+        height: 5%;
+        justify-content: center;
+        color: var(--text-color);
+        i {
+            font-size: 1.3rem;
+            padding: 0rem 1.75rem;
+        }
+        span {
+            font-size: 1rem;
+            padding: 0.25rem 1.1rem;
+            color: var(--month-text-color);
+            font-weight: 700;
+            border-radius: 50px;
+        }
+        span:hover {
+            background-color: var(--hover-color);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            cursor: pointer;
+        }
+    }
+
+    .months-section {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 0.5rem;
+        color: var(--text-color);
+        height: 95%;
+        width: 100%;
+        .month-container {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            // border: 1px solid yellow;
+            font-size: 0.65rem;
+            padding: 0;
+            .month-header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--text-color);
+                width: 100%;
+                height: 100%;
+                padding: 0;
+
+                // border: 1px solid var(--text-color);
+                // border-radius: 1rem 1rem 0 0;
+                i.caret {
+                    visibility: hidden;
+                    pointer-events: none;
+                }
+
+                .month-name {
+                    color: var(--month-text-color);
+                    font-weight: 600;
+                    font-size: 0.8rem;
+                    // padding: 0.75rem 1.1rem;
+                    // border-radius: 50px;
+                    // &
+                }
+            }
+
+            .month-body {
+                width: 100%;
+                height: 100%;
+                // border: 1px solid var(--text-color);
+                // border-radius: 0 0 1rem 1rem;
+                .month-week-days,
+                .month-days {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                }
+
+                .month-week-days {
+                    min-height: 15%;
+                    max-height: 15%;
+                    font-weight: 600;
+                    .week-day-name {
+                        display: grid;
+                        place-items: center;
+                        color: var(--background-second);
+                    }
+                }
+
+                .month-days {
+                    // gap: 2px;
+                    min-height: 85%;
+                    max-height: 85%;
+                    color: var(--text-color);
+                    .day {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        // padding: auto;
+                        // position: relative;
+                        // cursor: pointer;
+                        // color: var(--day-text-color);
+                        // font-size: 1.6ch;
+                        font-size: 0.65rem;
+                        &.prev-month,
+                        &.next-month {
+                            color: var(--background-main);
+                            visibility: none;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .month-container {
+    //     .month-header {
+    //         i.caret {
+    //             visibility: hidden;
+    //             pointer-events: none;
+    //         }
+    //         .month-name {
+    //             font-size: 0.8rem;
+    //             padding: 0.45rem 0.8rem;
+    //         }
+    //     }
+    //     .month-body {
+    //         padding: 0;
+    //         border: 1px solid yellow;
+    //     }
+    // }
+}
+
+// .card-container.month {
+//     height: ;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     margin: auto;
+//     padding: 0;
+//     overflow: hidden;
+//     overflow-y: auto;
+// }
+
+.card-container.month {
+    .months-section {
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // border: 1px solid green;
+        height: 100%;
+        width: 100%;
+
+        .month-container {
+            width: 100%;
+            height: 100%;
+            // height: auto;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            background-color: var(--background-main);
+            // border: 1px solid red;
+            .month-header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--text-color);
+                min-height: 10%;
+                i {
+                    padding: 0rem 1.75rem;
+                }
+                .month-name {
+                    color: var(--month-text-color);
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    padding: 0.25rem 1.1rem;
+                    border-radius: 50px;
+                    &:hover {
+                        background-color: var(--hover-color);
+                        transition: var(--transition);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .month-body {
+                // padding: 0.7rem 0;
+                width: 100%;
+                height: 90%;
+                .month-week-days {
+                    display: grid;
+                    // grid-template-columns: repeat(7, 1fr);
+                    grid-template-columns: repeat(7, auto);
+                    font-weight: 600;
+                    min-height: 10%;
+                    .week-day-name {
+                        display: grid;
+                        place-items: center;
+                        color: var(--background-second);
+                    }
+                }
+
+                .month-days {
+                    width: 100%;
+                    display: grid;
+                    height: 90%;
+                    // grid-template-columns: repeat(7, 1fr);
+                    // gap: 0 calc(100% / 7);
+                    grid-template-columns: repeat(7, auto);
+                    color: var(--text-color);
+
+                    .day {
+                        // width: 40px;
+                        // height: 40px;
+                        display: flex;
+                        // justify-content: end;
+                        // align-items: flex-start;
+                        justify-content: center;
+                        // padding: 0.5rem 0 0 0;
+                        // padding: 0.5rem 0.75rem 0 0;
+                        position: relative;
+                        cursor: pointer;
+                        color: var(--day-text-color);
+                        // font-size: 1.6ch;
+                        border: 1px solid yellow;
+                        &.prev-month,
+                        &.next-month {
+                            color: var(--text-muted);
+                        }
+                    }
+                }
+
+                // ol {
+                //     list-style: none;
+                //     display: grid;
+                //     grid-template-columns: repeat(7, 1fr);
+                //     padding: 0;
+                // }
+
+                // .month-week-days {
+                //     li.week-day-name {
+                //         color: var(--month-text-color);
+                //         // opacity: 1;
+                //         font-weight: 400;
+                //     }
+                // }
+
+                // .month-days {
+                //     li {
+                //         // text-align: center;
+                //         // // padding: 5px 0px 5px 0px;
+                //         // // padding: 3px, 0px, 3px, 0px;
+                //         // margin: 0;
+                //         // font-size: 1.5ch;
+                //         &.day {
+                //             color: var(--day-text-color);
+                //             &:hover {
+                //                 cursor: pointer;
+                //             }
+                //         }
+
+                //         &.prev-month,
+                //         &.next-month {
+                //             color: rgb(108, 117, 125);
+                //         }
+                //     }
+                // }
+            }
+
+            // .month-footer {
+            //     padding: 10px;
+            //     // display: flex;
+            //     // justify-content: flex-end;
+            //     align-items: center;
+            // }
+        }
+    }
+}
+
+@media (min-width: $size-md-width) {
+    .card-container {
+        &.year {
+            .months-section {
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                grid-template-rows: repeat(3, auto);
+            }
+        }
+
+        &.month {
+            .months-section {
+                // height: 100%;
+                // display: grid;
+                // grid-template-columns: repeat(2, 1fr);
+                // border: 1px solid green;
+                // background-color: var(--background-main);
+                // width: 100%;
+                // padding: 0.8rem;
+                // border-radius: 1.5rem;
+                .month-container {
+                    padding: 2.5rem;
+                    border: 1px solid red;
+                    // width: 100%;
+                    // background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+// .box {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .month-days div span {
+//     position: absolute;
+// }
+
+// .month-days div:hover span {
+//     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+// }
+
+// .month-days div span:nth-child(1),
+// .month-days div span:nth-child(3) {
+//     width: 2px;
+//     height: 0;
+//     background-color: var(--text-color);
+// }
+
+// .month-days div:hover span:nth-child(1),
+// .month-days div:hover span:nth-child(3) {
+//     height: 100%;
+// }
+
+// .month-days div span:nth-child(1) {
+//     bottom: 0;
+//     left: 0;
+// }
+
+// .month-days div span:nth-child(3) {
+//     top: 0;
+//     right: 0;
+// }
+
+// .month-days div span:nth-child(2),
+// .month-days div span:nth-child(4) {
+//     width: 0;
+//     height: 2px;
+//     background-color: var(--text-color);
+// }
+
+// .month-days div:hover span:nth-child(2),
+// .month-days div:hover span:nth-child(4) {
+//     width: 100%;
+// }
+
+// .month-days div span:nth-child(2) {
+//     top: 0;
+//     left: 0;
+// }
+
+// .month-days div span:nth-child(4) {
+//     bottom: 0;
+//     right: 0;
+// }
+
+// .month-days div:hover span:nth-child(2) {
+//     transition-delay: 0.2s;
+// }
+
+// .month-days div:hover span:nth-child(3) {
+//     transition-delay: 0.4s;
+// }
+
+// .month-days div:hover span:nth-child(4) {
+//     transition-delay: 0.6s;
+// }
+

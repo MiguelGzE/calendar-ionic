@@ -1,0 +1,13 @@
+<main class="main-container" [ngClass]="theme">
+    <app-header [isSideBarCollapsed]="isSideBarCollapsed" (onToggleSideBar)="onToggleSideBar($event)"
+        (onChangeTheme)="getTheme($event)"></app-header>
+    <app-sidebar [collapsed]="isSideBarCollapsed" (onToggleSideBar)="onToggleSideBar($event)"
+        (onChangeCalendarView)="getNewCalendarView($event)">
+    </app-sidebar>
+    <div class="body-container" [class.body-full-screen]="isSideBarCollapsed">
+        <div class="overlay" [class.active]="!isSideBarCollapsed" (click)="isSideBarCollapsed = true; isChangeOfViewFromSideBar = false"></div>
+        <app-main-calendar [calendarViewSelected]="calendarViewSelected" [locale]="locale"
+            [isSideBarCollapsed]="isSideBarCollapsed" [isChangeOfViewFromSideBar]="isChangeOfViewFromSideBar">
+        </app-main-calendar>
+    </div>
+</main>

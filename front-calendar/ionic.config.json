@@ -1,0 +1,8 @@
+{
+  "name": "frontCalendar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a1ceca9f"
+}

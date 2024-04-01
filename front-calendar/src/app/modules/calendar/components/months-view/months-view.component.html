@@ -1,0 +1,84 @@
+<!-- <div class="row months-view" [ngClass]="calendarView">
+  <div *ngFor="let month of monthsList"
+    [ngClass]="calendarView === 'year' ? 'col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4' : 'col-12'">
+    <div class="container">
+      <div class="month-header text-center">
+        {{month['monthName' + typeText] | uppercase}}
+      </div>
+      <table class="table table-borderless m-0 p-0" (click)="changeView(month)">
+        <thead>
+          <tr class="text-center">
+            <th class="month-day" *ngFor="let day of weekDaysList; let i = index">
+              {{day['weekDayName' + typeText] | uppercase}}
+            </th>
+          </tr>
+        </thead> -->
+<!-- <tbody>
+          <tr *ngFor="let week of item.weeks; let i = index">
+            <td *ngFor="let day of week; let j = index" [class]="day.class" [ngStyle]="day.style" (click)="calendarView == 0? openModal(modalEvents, Month.month, day): 
+                  calendarView == 1? setDate(Month.month, day): false">
+              <p class="m-0 p-0"
+                [hidden]="(day.class === 'prev-month' || day.class === 'next-month') && calendarView === 'year'">
+                {{day.value}}
+              </p>
+            </td>
+          </tr>
+        </tbody> -->
+<!-- </table>
+    </div>
+  </div>
+</div> -->
+
+<section class="card-container" [ngClass]="calendarView">
+  <header class="year-header" *ngIf="calendarView === 'year'">
+    <i class="caret fa fa-caret-left fa-2x" aria-hidden="true"></i>
+    <span>{{yearSelected}}</span>
+    <i class="caret fa fa-caret-right fa-2x" aria-hidden="true"></i>
+  </header>
+  <section class="months-section">
+    <div class="month-container" *ngFor="let month of monthsList; let i = index"
+      [hidden]="calendarView === 'month' && !month.isSelectedMonth"
+      (click)="calendarView === 'year' ? changeViewToOnlyOneMonth(month) : false">
+      <div class="month-header">
+        <i (click)="showOtherMonth(i, 'previous')" class="caret fa fa-caret-left fa-2x" aria-hidden="true"></i>
+        <div class="month-name">
+          <span (click)="calendarView === 'month' ? selectNewMonth(month.monthIndex) : false">
+            {{month['monthName' + typeText] + yearText | titlecase}}</span>
+        </div>
+        <i (click)="showOtherMonth(i, 'next')" class="caret fa fa-caret-right fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="month-body">
+        <div class="month-week-days">
+          <div class="week-day-name" *ngFor="let weekDay of weekDaysList; let i = index">
+            {{weekDay['weekDayName' + typeText] | titlecase}}
+          </div>
+        </div>
+        <div class="month-days">
+          <div class="day" [class]="day.class" *ngFor="let day of month.daysList">
+            {{day.value}}
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="month-events" *ngIf="calendarView === 'month'">
+        Prueba eventos
+      </div> -->
+    </div>
+  </section>
+</section>
+
+
+
+<!-- <ol class="week-days-list">
+          <li class="week-day-name" *ngFor="let weekDay of weekDaysList; let i = index">
+            {{weekDay['weekDayName' + typeText] | uppercase}}
+          </li>
+        </ol> -->
+
+
+<!-- <ol class="days-list">
+          <li [class]="day.class" *ngFor="let day of month.daysList">{{day.value}}</li>
+        </ol> -->
+
+
+<!-- [ngClass]="[calendarView === 'year' ? 'col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4' : 'col-12']" -->

@@ -1,0 +1,134 @@
+:host {
+    --header-height: 6vh;
+    // --sidebar-width: 85vw;
+    --sidebar-collapsed-width: 0vw;
+
+    --sidebar-nav-active-gradient: linear-gradient(
+        180deg,
+        rgba(5, 5, 40, 1) 0%,
+        rgba(12, 46, 86, 1) 35%,
+        rgba(15, 133, 174, 1) 100%
+    );
+
+    --border-radius: 4px;
+    --nav-height: 100px;
+    --nav-scroll-height: 70px;
+    --tab-height: 42px;
+    --tab-width: 120px;
+
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2, 12, 27, 0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #64ffda;
+    --green-tint: rgba(100, 255, 218, 0.1);
+    --pink: #f57dff;
+    // --blue: #57cbff;
+    --blue: rgb(121, 168, 191);
+
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --hamburger-width: 30px;
+    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+
+    --dark-body: #18191a;
+    --dark-main: #242526;
+    --dark-muted-text: #3d4650;
+    --dark-second: #b9b9b9;
+    --dark-hover: #8f8f8fc9;
+    --dark-text: #f8f8f8;
+    --dark-shadow: #242526;
+
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-muted-text: #b4b4b4c7;
+    --light-second: #85848a;
+    --light-hover: #edf0f5;
+    --light-text: #151426;
+    --light-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    --blue: #0000ff;
+    --white: #ffffff;
+    --font-family: cursive;
+
+    // --dark-body: #4d4c5a;
+    // --dark-main: #141529;
+    // --dark-second: #79788c;
+    // --dark-hover: #323048;
+    // --dark-text: #f8fbff;
+
+    // --light-body: #f3f8fe;
+    // --light-main: #fdfdfd;
+    // --light-second: #c3c2c8;
+    // --light-hover: #edf0f5;
+    // --light-text: #151426;
+    // --blue: #0000ff;
+    // --white: #fff;
+    // --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // --font-family: cursive;
+}
+
+.dark-theme {
+    --background-body: var(--dark-body);
+    --background-main: var(--dark-main);
+    --text-muted: var(--dark-muted-text);
+    --background-second: var(--dark-second);
+    --month-text-color: #fdfdfd;
+    --day-text-color: var(--white);
+    --icon-color: #fdfdfd;
+    --text-color: var(--dark-text);
+    --sidebar-background: var(--dark-main);
+    --sidebar-nav-active: #3b3b3bdf;
+    --sidebar-nav-hover: #474747e8;
+    --scrollbar-color: #a2a2a2;
+    --overlay-background: #0000009e;
+    --hover-color: var(--dark-hover);
+    --shadow: var(--dark-shadow);
+    // --background-color: #0c0c0c;
+    // --month-text-color: #fdfdfd;
+    // --day-text-color: #ffffff;
+    // --icon-color: #fdfdfd;
+    // --text-color: #fdfdfd;
+    // --sidebar-background: #1b1b1b;
+    // --sidebar-nav-active: #3b3b3bdf;
+    // --sidebar-nav-hover: #474747e8;
+    // --scrollbar-color: #a2a2a2;
+    // --overlay-background: rgba(0, 0, 0, 0.621);
+}
+
+.light-theme {
+    --background-body: var(--light-body);
+    --background-main: var(--light-main);
+    --text-muted: var(--light-muted-text);
+    --background-second: var(--light-second);
+    --month-text-color: #0c0c0c;
+    --day-text-color: #1a1a1a;
+    --icon-color: #0c0c0c;
+    --text-color: var(--light-text);
+    --sidebar-background: var(--light-main);
+    --sidebar-nav-active: #dbdbdb;
+    --sidebar-nav-hover: #d7d7d7;
+    --scrollbar-color: #a2a2a2;
+    --overlay-background: rgba(0, 0, 0, 0.2);
+    --hover-color: var(--light-hover);
+    --shadow: var(--light-shadow);
+    // --background-body: #ffffff;
+    // --month-text-color: #0c0c0c;
+    // --day-text-color: #1a1a1a;
+    // --icon-color: #0c0c0c;
+    // --text-color: #0c0c0c;
+    // --sidebar-background: #f7f7f7;
+    // --sidebar-nav-active: #dbdbdb;
+    // --sidebar-nav-hover: #d7d7d7;
+    // --scrollbar-color: #a2a2a2;
+    // --overlay-background: rgba(0, 0, 0, 0.2);
+}

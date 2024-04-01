@@ -1,0 +1,27 @@
+<header>
+  <ul class="nav-items" [class.collapsed-sidebar]="isSideBarCollapsed === true">
+    <li class="nav-item nav-item-icon">
+      <!-- <i class="fa fa-bars sidebar-collapse-icon" @rotate (click)="toggleCollapseSidebar()"></i> -->
+      <!-- <ion-icon name="list-outline" (click)="toggleCollapseSidebar()"></ion-icon> -->
+      <i class="fa fa-bars sidebar-collapse-icon" (click)="toggleCollapseSidebar()"></i>
+    </li>
+    <li class="nav-item nav-items-right">
+      <!-- <a class="nav-item-link" href="#about">Adriana Ríos <i class="fa fa-caret-down"></i></a> -->
+      <!-- <a class="nav-item-link" href="javascript:void(0)" (click)="switchTheme()">
+        {{theme === 'light-theme' ? 'Dark' : ':Light'}}
+      </a> -->
+      <!-- <a class="nav-item-link btn-theme" href="javascript:void(0)" (click)="switchTheme()">
+        {{theme === 'light-theme' ? 'Dark' : 'Light'}}
+      </a> -->
+
+      <a class="nav-item-link" href="javascript:void(0)" (click)="switchTheme()">
+        <div class="toggle" [class]="theme">
+          <!-- <span>Dark mode</span> -->
+          <div class="dark-mode-switch">
+            <div class="dark-mode-switch-ident"></div>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</header>

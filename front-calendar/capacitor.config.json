@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "frontCalendar",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,255 @@
+@import "../../../../shared/styles/variables.scss";
+@import "../../../../shared/styles/global-variables.scss";
+
+.calendar {
+    position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // transition: $transition;
+    min-height: calc(100vh - var(--header-height));
+    max-height: calc(100vh - var(--header-height));
+    // max-height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    // padding: 1rem 2.5rem;
+
+    // display: grid;
+    // place-items: center;
+    // font-family: var(--font-family);
+    // background-color: var(--bg-body);
+
+    .calendar-container {
+        width: 90%;
+        height: 90%;
+        background-color: transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        padding: 0;
+        overflow: hidden;
+        overflow-y: hidden;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: var(--overlay-background);
+    transition: ease 1s;
+}
+
+// @media (min-width: $size-lg-width) {
+//     .calendar-container {
+//         width: 100%;
+//         // width: 50% !important;
+//         // &.year {
+//         // width: 90% !important;
+//         // height: 90% !important;
+//         // }
+//     }
+// }
+
+// .date-selector {
+//     position: fixed;
+//     width: 90vw;
+//     height: 50vh;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     background-color: var(--background-main);
+//     bottom: 2.5vh;
+//     border-radius: 30px;
+//     z-index: 25;
+//     // padding: 1.25rem;
+//     visibility: hidden;
+//     pointer-events: none;
+//     // transform: scale(1.5);
+//     border: 1px solid green;
+//     // transition: all 0.2s ease-in-out;
+
+//     // position: fixed;
+//     // width: 95vw;
+//     // left: 50%;
+//     // transform: translate(-50%);
+//     // height: 60vh;
+//     // bottom: -61vh;
+//     // left: 50%;
+//     // z-index: 20;
+//     // // transition: ease 1s;
+//     // // transition: var(--transition);
+//     // margin: 0 auto;
+
+//     .body {
+//         // margin: 0 auto;
+//         z-index: 20;
+//         position: absolute;
+//         // background: var(--sidebar-background);
+//         color: var(--text-color);
+//         width: 100%;
+//         height: 100%;
+//         padding: 1.25rem 1rem;
+//         transform: scale(1.5);
+//         transition: all 0.2s ease-in-out;
+//         visibility: hidden;
+//         pointer-events: none;
+//         .active {
+//             transform: scale(1);
+//             visibility: visible;
+//             pointer-events: visible;
+//         }
+
+//         // border-radius: 30px;
+//         // padding: 1.25rem 1rem;
+//     }
+
+//     // &.active {
+//     //     bottom: 2.5vh;
+//     // }
+// }
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) var(--background-body);
+    transition: var(--transition);
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--background-body);
+    transition: var(--transition);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border: 3px solid var(--background-body);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+// @media (max-width: $size-sm-width) {
+//     .calendar {
+//         &.year {
+//             // font-size: 0.7rem;
+//             padding: 1rem 1.5rem;
+//         }
+//         &.month {
+//             // font-size: 0.9rem;
+//             padding: 1rem 1.5rem;
+//         }
+//     }
+// }
+
+.date-selector {
+    width: 95vw;
+    height: 50vh;
+    overflow: hidden;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    // bottom: -51vh;
+    // top: 0;
+    bottom: 2.5vh;
+    right: 0;
+    background-color: var(--background-main);
+    padding: 1.5rem;
+    z-index: 25;
+    visibility: hidden;
+    pointer-events: none;
+    border-radius: 30px;
+    // transform: scale(1.5);
+    // transition: all 0.1s ease-in-out;
+    // transition: var(--transition);
+    .body {
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.5);
+        // transition: 20ms ease-out;
+    }
+    &.active {
+        visibility: visible;
+        pointer-events: visible;
+        // bottom: 2.5vh;
+        transform: scale(1);
+        .body {
+            transition: all 0.15s ease-in;
+            transform: scale(1);
+        }
+    }
+}
+
+// .calendar-container > .container {
+//     // padding-right: 2px;
+//     // padding-left: 1px;
+//     // padding-bottom: 2px;
+//     // background-color: transparent;
+//     border: 1px solid red;
+// }
+
+// th {
+//     text-align: center;
+//     padding: 3px 0px 3px 0px;
+//     margin: 0;
+//     font-size: 12px;
+// }
+
+// td {
+//     text-align: center;
+//     padding: 5px 0px 5px 0px;
+//     // padding: 3px, 0px, 3px, 0px;
+//     margin: 0;
+//     font-size: 10px;
+// }
+
+// .borderless td,
+// .borderless th {
+//     border: none;
+// }
+
+// .border-white {
+//     border: 1px solid white;
+//     border-radius: 5px;
+// }
+
+// .prev-month,
+// .next-month {
+//     color: #cbd1d2;
+// }
+
+// .prev-month:hover,
+// .next-month:hover {
+//     background-color: #cbd1d2;
+//     color: white;
+//     // cursor: not-allowed;
+// }
+
+// .today {
+//     // background-color: #299e4c;
+//     color: white;
+// }
+
+// .day:hover {
+//     // background-color:#00addf;
+//     // color: white;
+//     cursor: pointer;
+// }
+
+// .today:hover {
+//     background-color: #198138;
+//     color: white;
+//     cursor: pointer;
+// }
+
+// .day-active {
+//     // background-color:#00addf;
+//     color: white;
+// }
+

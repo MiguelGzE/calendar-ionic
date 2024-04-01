@@ -1,0 +1,88 @@
+<div class="row" *ngIf="calendarLoading">
+  <div class="col-12">
+    <div class="container border rounded py-4 px-5 text-center">
+      <h4><i class="fa fa-spin fa-spinner fa-lg"></i> Cargando calendario</h4>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showDateSelector" (click)="showDateSelector = false"></div>
+
+<div class="calendar">
+  <div class="calendar-container" *ngIf="!calendarLoading"
+    [ngClass]="{'d-flex justify-content-center' : calendarView == 'month'}">
+    <!-- <div class="calendar-body" [ngClass]="calendarView"> -->
+    <app-months-view *ngIf="calendarView === 'year' || calendarView === 'month'" [calendarData]="calendarData"
+      [calendarView]="calendarView" (clickOnMonth)="changeView($event)" [isMonthSelected]="isMonthSelected"
+      (clickOnMonthName)="openDateSelector($event)" [isChangeOfViewFromSideBar]="isChangeOfViewFromSideBar">
+    </app-months-view>
+    <!-- </div> -->
+  </div>
+  
+  <!-- <div class="month-list" [class.active]="showDateSelector">
+    <div><div>Enero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Marzo</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+    <div><div>Febrero</div></div>
+  </div> -->
+  <div class="date-selector" [class.body-full-screen]="isSideBarCollapsed"
+    [ngClass]="{'active fade-in' : showDateSelector }">
+    <div class="body">
+      <app-date-selector [locale]="locale" [yearSelected]="yearSelected" [monthSelected]="monthSelected"
+        (newDateSelected)="setNewDataSelected($event)">
+      </app-date-selector>
+    </div>
+  </div>
+</div>
+<!-- [class.active]="showDateSelector" -->
+
+<!-- [ngClass]="[showDateSelector? 'active fade-in' : 'fade-out']" -->
+
+<!-- <ng-template #modalEvents let-modal>
+  <div class="modal-header">
+      <h4 class="modal-title"><h5>Eventos</h5></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body mx-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="list-group" *ngIf="eventsDate && eventsDate.length > 0">
+          <li class="list-group-item text-center">
+            <h5><b>Eventos del día {{monthSelected.day.value}} de {{monthSelected.text}} del año {{monthSelected.year}}</b></h5>
+          </li>
+          <li class="list-group-item list-group-item-action flex-column align-items-start"
+            *ngFor="let event of eventsDate; let i = index;" >
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{event.evento_nombre}}
+              </h5>
+              <small>{{event.fecha_inicio | date: 'dd/MM/yyyy'}} - {{event.fecha_fin | date: 'dd/MM/yyyy'}}
+                <span class="badge px-2 py-1" [ngStyle]="{'background-color': event.color, 'color': event.color}">
+                  {{monthSelected.day.value > 9? monthSelected.day.value : '0' + monthSelected.day.value }}
+                </span>
+              </small>
+            </div>
+            <p class="mb-1">{{event.evento_desc}}</p>
+          </li>
+        </div>
+        <div class="list-group" *ngIf="eventsDate.length == 0">
+          <li class="list-group-item text-center">
+            <h5><b>No se encontraron eventos disponibles</b></h5>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close()">Cerrar</button>
+  </div>
+</ng-template> -->

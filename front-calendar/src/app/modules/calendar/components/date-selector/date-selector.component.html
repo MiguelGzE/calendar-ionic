@@ -1,0 +1,28 @@
+<div class="date-selector">
+  <div class="year-header">
+    <i (click)="showOtherMonth(i, 'previous')" class="fa fa-caret-left fa-2x" aria-hidden="true"></i>
+    <span class="year" (click)="dateSelectorView === 'month' ? false : changeView()">
+      {{ dateSelectorTitle }}</span>
+    <i (click)="showOtherMonth(i, 'next')" class="fa fa-caret-right fa-2x" aria-hidden="true"></i>
+  </div>
+  <!-- <div class="year-header" (click)="changeView()">
+    <span>{{ dateSelectorTitle }}</span>
+  </div> -->
+  <div class="data-container" #items id="items">
+    <div class="item" *ngFor="let item of dataToShow; let i = index;"
+      [ngClass]="{'active' : (dateSelectorView == 'months' ? item.selected : dataToShow[indexYearSelected['j']] == item)}"
+      (click)="dateSelectorView == 'months' ? selectNewMonth(item) : selectNewYear(item)">
+      <div class="item-content">
+        {{ dateSelectorView == 'months' ? item.monthNameShort : item }}
+      </div>
+    </div>
+    <!-- <ol class="items-list">
+      <li *ngFor="let item of dataToShow; let i = index;">
+        <span class="dot" [ngClass]="{'active' : (dateSelectorView == 'months' ? item.selected : 
+          dataToShow[indexYearSelected['j']] == item)}"
+          (click)="dateSelectorView == 'months' ? selectNewMonth(item) : selectNewYear(item)">
+          {{ dateSelectorView == 'months' ? item.monthNameShort : item }}</span>
+      </li>
+    </ol> -->
+  </div>
+</div>
